@@ -23,7 +23,7 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 
 | Disciplina | Docente | Tecnologias | Acesso |
 | :--- | :--- | :--- | :---: |
-| **Desenvolvimento Front-End & UX** | — | HTML, CSS, JS | [🔗 Repositório Externo ↗](#) |
+| **Desenvolvimento Front-End & UX** | — | HTML, CSS, JS | [🔗 Repositório Externo ↗](https://github.com/Kaua-Melchior/Front-End_UCB) |
 
 ---
 
