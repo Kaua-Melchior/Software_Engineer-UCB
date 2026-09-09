@@ -6,7 +6,6 @@ que calcule seu peso ideal utilizando as seguintes fórmulas:
 • Para mulheres: peso ideal = (62,1 × altura) - 44,7
 */
 #include <stdio.h>
-#include <ctype.h>
 
 int main() {
   float altura, peso_ideal;
@@ -18,13 +17,11 @@ int main() {
   printf("Digite o sexo (M para Masculino, F para Feminino): ");
   scanf(" %c", &sexo);
 
-  char sexo_upper = (char)toupper((unsigned char)sexo);
-
-  if (sexo_upper == 'M') {
+  if (sexo == 'M' || sexo == 'm') {
     peso_ideal = (72.7f * altura) - 58.0f;
     printf("\nSexo: Masculino | Altura: %.2fm\n", altura);
     printf("Peso ideal: %.2f kg\n", peso_ideal);
-  } else if (sexo_upper == 'F') {
+  } else if (sexo == 'F' || sexo == 'f') {
     peso_ideal = (62.1f * altura) - 44.7f;
     printf("\nSexo: Feminino | Altura: %.2fm\n", altura);
     printf("Peso ideal: %.2f kg\n", peso_ideal);
@@ -34,3 +31,4 @@ int main() {
 
   return 0;
 }
+
