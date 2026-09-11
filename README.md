@@ -32,6 +32,7 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 | Disciplina | Docente | Tecnologias | Acesso |
 | :--- | :--- | :--- | :---: |
 | **Lógica de Programação e Algoritmos (LPA)** | Profª. Hialy Rabelo | C | [📁 Acessar Pasta](./2_Semestre/LPA) |
+| **Prática Profissional 2 (PP2)** | — | C | [📁 Acessar Pasta](./2_Semestre/PP2) |
 
 ---
 
@@ -40,10 +41,17 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 ```text
 .
 ├── 2_Semestre/
-│   └── LPA/
-│       └── Lista de Atividade - 01/
-│           ├── desafio-01.c
-│           ├── desafio-02.c
-│           └── ... (arquivos .c)
+│   ├── LPA/
+│   │   ├── Lista de Atividade - 01/
+│   │   │   ├── desafio-01.c
+│   │   │   ├── desafio-02.c
+│   │   │   └── ... (arquivos .c)
+│   │   └── Lista de Atividade - 02/
+│   │       ├── desafio-01.c
+│   │       ├── desafio-02.c
+│   │       └── ... (arquivos .c)
+│   └── PP2/
+│       └── Atividade-N1/
+│           └── sistema_carros.c
 └── README.md
 ```
