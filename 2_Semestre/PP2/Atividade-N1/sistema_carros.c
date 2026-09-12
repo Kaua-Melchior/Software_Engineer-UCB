@@ -6,10 +6,9 @@ int main() {
   int status;
   int continuar = 1;
 
-  // Arrays para guardar o histórico de clientes sem struct (limite fixado em
-  // 100)
-  char nomesClientes[100][100];
-  int statusClientes[100];
+  float valorParcela;
+  int numParcelas;
+  char nomeCliente[100];
 
   // Contadores para o relatório final
   int totalClientes = 0;
@@ -24,7 +23,7 @@ int main() {
     printf("\n--- Cliente %d ---\n", totalClientes + 1);
 
     printf("Digite o nome do cliente: ");
-    scanf(" %[^\n]s", nomesClientes[totalClientes]);
+    scanf(" %[^\n]s", nomeCliente);
 
     printf("Digite a renda mensal do cliente (R$): ");
     scanf("%f", &rendaMensal);
@@ -32,24 +31,29 @@ int main() {
     scanf("%d", &idade);
     printf("Digite o valor do carro desejado (R$): ");
     scanf("%f", &precoCarro);
+    printf("Digite a quantidade de parcelas desejada: ");
+    scanf("%d", &numParcelas);
+
+    if (numParcelas <= 0) {
+      numParcelas = 1; // Evita divisao por zero
+    }
+    valorParcela = precoCarro / numParcelas;
 
     // Regra definida:
     // Menor de 18 anos -> Reprovado (3)
-    // Renda >= 30% do valor do carro -> Aprovado (1)
-    // Renda entre 15% e 30% do valor do carro -> Em Analise (2)
-    // Renda < 15% do valor do carro -> Reprovado (3)
+    // Renda >= 3 vezes o valor da parcela (parcela <= 1/3 da renda) -> Aprovado (1)
+    // Renda >= 2 vezes o valor da parcela -> Em Analise (2)
+    // Renda < 2 vezes o valor da parcela -> Reprovado (3)
 
     if (idade < 18) {
       status = 3;
-    } else if (rendaMensal >= precoCarro * 0.30) {
+    } else if (rendaMensal >= valorParcela * 3.0) {
       status = 1;
-    } else if (rendaMensal >= precoCarro * 0.15) {
+    } else if (rendaMensal >= valorParcela * 2.0) {
       status = 2;
     } else {
       status = 3;
     }
-
-    statusClientes[totalClientes] = status;
 
     printf("\nResultado da Classificacao:\n");
 
@@ -57,8 +61,8 @@ int main() {
     switch (status) {
     case 1:
       printf("Situacao: APROVADO\n");
-      printf("Parabens! A renda do cliente eh compativel com o valor do "
-             "veiculo.\n");
+      printf("Parabens! A renda do cliente eh compativel com a parcela de R$ "
+             "%.2f.\n", valorParcela);
       aprovados++;
       break;
     case 2:
@@ -73,7 +77,7 @@ int main() {
         printf("Motivo: O cliente eh menor de idade.\n");
       } else {
         printf(
-            "Motivo: Renda insuficiente para o financiamento deste veiculo.\n");
+            "Motivo: Renda insuficiente para a parcela de R$ %.2f.\n", valorParcela);
       }
       reprovados++;
       break;
@@ -93,19 +97,7 @@ int main() {
   printf("          RELATORIO FINAL               \n");
   printf("========================================\n");
 
-  // Visualização de cada cliente individualmente
-  printf("--- Lista de Clientes Analisados ---\n");
-  for (int i = 0; i < totalClientes; i++) {
-    printf("Nome: %-20s | Status: ", nomesClientes[i]);
-    if (statusClientes[i] == 1) {
-      printf("APROVADO\n");
-    } else if (statusClientes[i] == 2) {
-      printf("EM ANALISE\n");
-    } else {
-      printf("REPROVADO\n");
-    }
-  }
-  printf("----------------------------------------\n");
+  // Exibicao de clientes individuais removida conforme as novas regras.
 
   // Resumo final
   printf("Total de clientes processados: %d\n", totalClientes);
