@@ -23,7 +23,7 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 
 | Disciplina | Docente | Tecnologias | Acesso |
 | :--- | :--- | :--- | :---: |
-| **Desenvolvimento Front-End & UX** | — | HTML, CSS, JS | [🔗 Repositório Externo ↗](https://github.com/Kaua-Melchior/Front-End_UCB) |
+| **Desenvolvimento Front-End & UX** | Marcos Veloso | HTML, CSS, JS | [🔗 Repositório Externo ↗](https://github.com/Kaua-Melchior/Front-End_UCB) |
 
 ---
 
@@ -32,7 +32,7 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 | Disciplina | Docente | Tecnologias | Acesso |
 | :--- | :--- | :--- | :---: |
 | **Lógica de Programação e Algoritmos (LPA)** | Profª. Hialy Rabelo | C | [📁 Acessar Pasta](./2_Semestre/LPA) |
-| **Prática Profissional 2 (PP2)** | — | C | [📁 Acessar Pasta](./2_Semestre/PP2) |
+| **Prática Profissional 2 (PP2)** | Fabiano Carvalho | C | [📁 Acessar Pasta](./2_Semestre/PP2) |
 
 ---
 
