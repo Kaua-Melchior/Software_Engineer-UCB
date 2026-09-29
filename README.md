@@ -46,7 +46,15 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 │   │   │   ├── desafio-01.c
 │   │   │   ├── desafio-02.c
 │   │   │   └── ... (arquivos .c)
-│   │   └── Lista de Atividade - 02/
+│   │   ├── Lista de Atividade - 02/
+│   │   │   ├── desafio-01.c
+│   │   │   ├── desafio-02.c
+│   │   │   └── ... (arquivos .c)
+│   │   ├── Lista de Atividade - 03/
+│   │   │   ├── desafio-01.c
+│   │   │   ├── desafio-02.c
+│   │   │   └── ... (arquivos .c)
+│   │   └── Lista de Atividade - 04/
 │   │       ├── desafio-01.c
 │   │       ├── desafio-02.c
 │   │       └── ... (arquivos .c)

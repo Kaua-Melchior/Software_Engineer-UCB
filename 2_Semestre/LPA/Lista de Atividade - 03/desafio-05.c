@@ -1,0 +1,21 @@
+/*
+# Desafio 05: Área do Retângulo
+Leia a base e a altura de um retângulo e calcule sua área.
+Área = Base × Altura
+*/
+#include <stdio.h>
+
+int main() {
+  float base, altura, area;
+
+  printf("Digite a base do retangulo: ");
+  scanf("%f", &base);
+  printf("Digite a altura do retangulo: ");
+  scanf("%f", &altura);
+
+  area = base * altura;
+
+  printf("A area do retangulo e: %.2f\n", area);
+
+  return 0;
+}
