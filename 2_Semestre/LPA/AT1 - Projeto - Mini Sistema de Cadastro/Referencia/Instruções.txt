@@ -1,0 +1,31 @@
+Instruções
+Critérios de Avaliação:
+
+As orientações para o desenvolvimento do trabalho estão disponíveis no arquivo anexado.
+
+Os grupos deverão ser compostos por 3 integrantes.
+
+A atividade terá valor total de 2,0 pontos, distribuídos da seguinte forma:
+
+Cadastro: 0,4 ponto;
+
+Consulta: 0,4 ponto;
+
+Listagem dos registros: 0,4 ponto;
+
+Alteração dos registros: 0,4 ponto;
+
+Exclusão dos registros: 0,4 ponto.
+
+Cada funcionalidade deverá estar implementada e funcionando corretamente.
+Salvar o projeto no GitHub e encaminhar o link do repositório.
+
+Apresentação:
+
+O grupo deverá apresentar o projeto à professora no dia 14/10/2026, demonstrando o funcionamento do sistema.
+
+Durante a apresentação, serão realizadas perguntas individuais aos integrantes sobre o código e a lógica utilizada. Todos deverão conhecer e compreender o projeto desenvolvido.
+
+Caso algum integrante não consiga responder a pergunta ou as perguntas sobre o projeto, será descontado 0,3 ponto da nota de todos os integrantes do grupo.
+
+Bom trabalho!

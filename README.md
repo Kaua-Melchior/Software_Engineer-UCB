@@ -29,10 +29,10 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 
 ### 📌 2º Semestre *(Atual)*
 
-| Disciplina | Docente | Tecnologias | Acesso |
+| Disciplina | Docente | Conteúdos / Projetos | Acesso |
 | :--- | :--- | :--- | :---: |
-| **Lógica de Programação e Algoritmos (LPA)** | Profª. Hialy Rabelo | C | [📁 Acessar Pasta](./2_Semestre/LPA) |
-| **Prática Profissional 2 (PP2)** | Fabiano Carvalho | C | [📁 Acessar Pasta](./2_Semestre/PP2) |
+| **Lógica de Programação e Algoritmos (LPA)** | Profª. Hialy Rabelo | Listas 01 a 04 & AT1 (Mini-Sistema de Cadastro em C) | [📁 Acessar Pasta](./2_Semestre/LPA) |
+| **Prática Profissional 2 (PP2)** | Fabiano Carvalho | Atividade N1 (Sistema de Carros em C) | [📁 Acessar Pasta](./2_Semestre/PP2) |
 
 ---
 
@@ -42,24 +42,29 @@ Repositório central dedicado ao armazenamento de códigos, anotações, listas 
 .
 ├── 2_Semestre/
 │   ├── LPA/
+│   │   ├── AT1 - Projeto - Mini Sistema de Cadastro/
+│   │   │   ├── Referencia/
+│   │   │   │   ├── Guia_Didatico_AT1_Mini_Sistema_C.pdf
+│   │   │   │   └── Instruções.txt
+│   │   │   ├── sistema_cadastro.c
+│   │   │   ├── sistema_cadastro.exe
+│   │   │   ├── Guia_Apresentacao_Oral.md
+│   │   │   └── README.md
 │   │   ├── Lista de Atividade - 01/
 │   │   │   ├── desafio-01.c
-│   │   │   ├── desafio-02.c
 │   │   │   └── ... (arquivos .c)
 │   │   ├── Lista de Atividade - 02/
 │   │   │   ├── desafio-01.c
-│   │   │   ├── desafio-02.c
 │   │   │   └── ... (arquivos .c)
 │   │   ├── Lista de Atividade - 03/
 │   │   │   ├── desafio-01.c
-│   │   │   ├── desafio-02.c
 │   │   │   └── ... (arquivos .c)
 │   │   └── Lista de Atividade - 04/
 │   │       ├── desafio-01.c
-│   │       ├── desafio-02.c
 │   │       └── ... (arquivos .c)
 │   └── PP2/
 │       └── Atividade-N1/
-│           └── sistema_carros.c
+│           ├── sistema_carros.c
+│           └── intruções.md
 └── README.md
 ```
