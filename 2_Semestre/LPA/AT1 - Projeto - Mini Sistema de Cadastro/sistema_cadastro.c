@@ -3,10 +3,19 @@
 
 #define TAM_MAX 20
 
+// Define comando para limpar a tela dependendo do SO (Windows: cls, Linux/OnlineGDB: clear)
+#ifdef _WIN32
+#define LIMPAR_TELA "cls"
+#else
+#define LIMPAR_TELA "clear"
+#endif
+
 int main() {
+#ifdef _WIN32
   // Configura o terminal do Windows para UTF-8 (permite ç, acentos e caracteres
   // especiais)
   system("chcp 65001 > nul");
+#endif
 
   // Vetores paralelos para armazenar os dados dos produtos
   int codigo[TAM_MAX];
@@ -27,7 +36,7 @@ int main() {
 
   do {
     // Limpa a tela antes de exibir o menu
-    system("cls");
+    system(LIMPAR_TELA);
 
     printf("=========================================\n");
     printf("     SISTEMA DE CADASTRO DE PRODUTOS     \n");
@@ -41,11 +50,21 @@ int main() {
     printf("=========================================\n");
     printf("Escolha uma opção: ");
 
-    // Valida para aceitar apenas numero na opcao
-    while (scanf("%d", &opcao) != 1) {
+    // Valida para aceitar apenas numero inteiro na opcao, descartando valores invalidos ou decimais
+    while (1) {
+      if (scanf("%d", &opcao) == 1) {
+        c = getchar();
+        while (c == ' ' || c == '\t')
+          c = getchar();
+        if (c == '\n')
+          break;
+        while (c != '\n' && c != EOF)
+          c = getchar();
+      } else {
+        while ((c = getchar()) != '\n' && c != EOF)
+          ;
+      }
       printf("Opção inválida! Digite apenas números: ");
-      while ((c = getchar()) != '\n' && c != EOF)
-        ; // Limpa caracteres invalidos do teclado
     }
 
     switch (opcao) {
@@ -53,7 +72,7 @@ int main() {
     // 1. CADASTRAR (0,4 ponto)
     // -------------------------------------------------------------
     case 1:
-      system("cls");
+      system(LIMPAR_TELA);
       printf("=========================================\n");
       printf("          CADASTRAR PRODUTO              \n");
       printf("=========================================\n");
@@ -63,30 +82,62 @@ int main() {
         printf("Limite máximo de cadastros atingido.\n");
       } else {
         printf("Digite o código: ");
-        // Garante que o codigo seja apenas numero positivo
-        while (scanf("%d", &codigo[total]) != 1 || codigo[total] <= 0) {
+        // Garante que o codigo seja apenas numero inteiro positivo (rejeita letras e decimais como 1.1)
+        while (1) {
+          if (scanf("%d", &codigo[total]) == 1) {
+            c = getchar();
+            while (c == ' ' || c == '\t')
+              c = getchar();
+            if (c == '\n' && codigo[total] > 0)
+              break;
+            while (c != '\n' && c != EOF)
+              c = getchar();
+          } else {
+            while ((c = getchar()) != '\n' && c != EOF)
+              ;
+          }
           printf("Código inválido! Digite apenas números: ");
-          while ((c = getchar()) != '\n' && c != EOF)
-            ; // Descarta letras ou caracteres invalidos
         }
 
         printf("Digite o nome: ");
         scanf(" %49[^\n]", nome[total]);
+        while ((c = getchar()) != '\n' && c != EOF)
+          ;
 
         printf("Digite o preço: R$ ");
-        // Garante que o preco seja apenas numero
-        while (scanf("%f", &preco[total]) != 1 || preco[total] < 0) {
+        // Garante que o preco seja apenas numero float positivo ou zero
+        while (1) {
+          if (scanf("%f", &preco[total]) == 1) {
+            c = getchar();
+            while (c == ' ' || c == '\t')
+              c = getchar();
+            if (c == '\n' && preco[total] >= 0)
+              break;
+            while (c != '\n' && c != EOF)
+              c = getchar();
+          } else {
+            while ((c = getchar()) != '\n' && c != EOF)
+              ;
+          }
           printf("Preço inválido! Digite apenas números: R$ ");
-          while ((c = getchar()) != '\n' && c != EOF)
-            ;
         }
 
         printf("Digite a quantidade: ");
-        // Garante que a quantidade seja apenas numero inteiro
-        while (scanf("%d", &quantidade[total]) != 1 || quantidade[total] < 0) {
+        // Garante que a quantidade seja apenas numero inteiro maior ou igual a zero
+        while (1) {
+          if (scanf("%d", &quantidade[total]) == 1) {
+            c = getchar();
+            while (c == ' ' || c == '\t')
+              c = getchar();
+            if (c == '\n' && quantidade[total] >= 0)
+              break;
+            while (c != '\n' && c != EOF)
+              c = getchar();
+          } else {
+            while ((c = getchar()) != '\n' && c != EOF)
+              ;
+          }
           printf("Quantidade inválida! Digite apenas números: ");
-          while ((c = getchar()) != '\n' && c != EOF)
-            ;
         }
 
         total++;
@@ -96,8 +147,6 @@ int main() {
       }
 
       printf("\nPressione ENTER para continuar...");
-      while ((c = getchar()) != '\n' && c != EOF)
-        ;
       getchar();
       break;
 
@@ -105,7 +154,7 @@ int main() {
     // 2. CONSULTAR (0,4 ponto)
     // -------------------------------------------------------------
     case 2:
-      system("cls");
+      system(LIMPAR_TELA);
       printf("=========================================\n");
       printf("          CONSULTAR PRODUTO              \n");
       printf("=========================================\n");
@@ -114,10 +163,20 @@ int main() {
         printf("Registro não encontrado.\n");
       } else {
         printf("Digite o código para consulta: ");
-        while (scanf("%d", &codigoBusca) != 1 || codigoBusca <= 0) {
+        while (1) {
+          if (scanf("%d", &codigoBusca) == 1) {
+            c = getchar();
+            while (c == ' ' || c == '\t')
+              c = getchar();
+            if (c == '\n' && codigoBusca > 0)
+              break;
+            while (c != '\n' && c != EOF)
+              c = getchar();
+          } else {
+            while ((c = getchar()) != '\n' && c != EOF)
+              ;
+          }
           printf("Código inválido! Digite apenas números: ");
-          while ((c = getchar()) != '\n' && c != EOF)
-            ;
         }
 
         encontrado = 0;
@@ -140,8 +199,6 @@ int main() {
       }
 
       printf("\nPressione ENTER para continuar...");
-      while ((c = getchar()) != '\n' && c != EOF)
-        ;
       getchar();
       break;
 
@@ -149,7 +206,7 @@ int main() {
     // 3. LISTAR (0,4 ponto)
     // -------------------------------------------------------------
     case 3:
-      system("cls");
+      system(LIMPAR_TELA);
       printf("=========================================\n");
       printf("          LISTA DE PRODUTOS              \n");
       printf("=========================================\n");
@@ -174,8 +231,6 @@ int main() {
       }
 
       printf("\nPressione ENTER para continuar...");
-      while ((c = getchar()) != '\n' && c != EOF)
-        ;
       getchar();
       break;
 
@@ -183,7 +238,7 @@ int main() {
     // 4. ALTERAR (0,4 ponto)
     // -------------------------------------------------------------
     case 4:
-      system("cls");
+      system(LIMPAR_TELA);
       printf("=========================================\n");
       printf("          ALTERAR PRODUTO                \n");
       printf("=========================================\n");
@@ -192,10 +247,20 @@ int main() {
         printf("Registro não encontrado.\n");
       } else {
         printf("Digite o código do produto a alterar: ");
-        while (scanf("%d", &codigoBusca) != 1 || codigoBusca <= 0) {
+        while (1) {
+          if (scanf("%d", &codigoBusca) == 1) {
+            c = getchar();
+            while (c == ' ' || c == '\t')
+              c = getchar();
+            if (c == '\n' && codigoBusca > 0)
+              break;
+            while (c != '\n' && c != EOF)
+              c = getchar();
+          } else {
+            while ((c = getchar()) != '\n' && c != EOF)
+              ;
+          }
           printf("Código inválido! Digite apenas números: ");
-          while ((c = getchar()) != '\n' && c != EOF)
-            ;
         }
 
         posicao = -1;
@@ -220,20 +285,41 @@ int main() {
           printf("\nDigite os novos dados:\n");
           printf("Novo nome: ");
           scanf(" %49[^\n]", nome[posicao]);
+          while ((c = getchar()) != '\n' && c != EOF)
+            ;
 
           printf("Novo preço: R$ ");
-          while (scanf("%f", &preco[posicao]) != 1 || preco[posicao] < 0) {
+          while (1) {
+            if (scanf("%f", &preco[posicao]) == 1) {
+              c = getchar();
+              while (c == ' ' || c == '\t')
+                c = getchar();
+              if (c == '\n' && preco[posicao] >= 0)
+                break;
+              while (c != '\n' && c != EOF)
+                c = getchar();
+            } else {
+              while ((c = getchar()) != '\n' && c != EOF)
+                ;
+            }
             printf("Preço inválido! Digite apenas números: R$ ");
-            while ((c = getchar()) != '\n' && c != EOF)
-              ;
           }
 
           printf("Nova quantidade: ");
-          while (scanf("%d", &quantidade[posicao]) != 1 ||
-                 quantidade[posicao] < 0) {
+          while (1) {
+            if (scanf("%d", &quantidade[posicao]) == 1) {
+              c = getchar();
+              while (c == ' ' || c == '\t')
+                c = getchar();
+              if (c == '\n' && quantidade[posicao] >= 0)
+                break;
+              while (c != '\n' && c != EOF)
+                c = getchar();
+            } else {
+              while ((c = getchar()) != '\n' && c != EOF)
+                ;
+            }
             printf("Quantidade inválida! Digite apenas números: ");
-            while ((c = getchar()) != '\n' && c != EOF)
-              ;
           }
 
           subtotal = preco[posicao] * quantidade[posicao];
@@ -244,8 +330,6 @@ int main() {
       }
 
       printf("\nPressione ENTER para continuar...");
-      while ((c = getchar()) != '\n' && c != EOF)
-        ;
       getchar();
       break;
 
@@ -253,7 +337,7 @@ int main() {
     // 5. EXCLUIR (0,4 ponto)
     // -------------------------------------------------------------
     case 5:
-      system("cls");
+      system(LIMPAR_TELA);
       printf("=========================================\n");
       printf("          EXCLUIR PRODUTO                \n");
       printf("=========================================\n");
@@ -262,10 +346,20 @@ int main() {
         printf("Não foi possível excluir.\n");
       } else {
         printf("Digite o código do produto a excluir: ");
-        while (scanf("%d", &codigoBusca) != 1 || codigoBusca <= 0) {
+        while (1) {
+          if (scanf("%d", &codigoBusca) == 1) {
+            c = getchar();
+            while (c == ' ' || c == '\t')
+              c = getchar();
+            if (c == '\n' && codigoBusca > 0)
+              break;
+            while (c != '\n' && c != EOF)
+              c = getchar();
+          } else {
+            while ((c = getchar()) != '\n' && c != EOF)
+              ;
+          }
           printf("Código inválido! Digite apenas números: ");
-          while ((c = getchar()) != '\n' && c != EOF)
-            ;
         }
 
         posicao = -1;
@@ -294,8 +388,6 @@ int main() {
       }
 
       printf("\nPressione ENTER para continuar...");
-      while ((c = getchar()) != '\n' && c != EOF)
-        ;
       getchar();
       break;
 
@@ -312,8 +404,6 @@ int main() {
     default:
       printf("\nOpção inválida.\n");
       printf("\nPressione ENTER para continuar...");
-      while ((c = getchar()) != '\n' && c != EOF)
-        ;
       getchar();
       break;
     }

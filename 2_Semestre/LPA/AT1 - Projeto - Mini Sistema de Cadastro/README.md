@@ -81,24 +81,34 @@ Subtotal:  [ 599.00]         [ 600.00]         [2700.00]
 ### Proteção de Teclado (Apenas Números)
 - Qualquer tentativa de digitar caracteres não numéricos em campos numéricos (como `a2`) é interceptada pelo retorno do `scanf`. O buffer do teclado é limpo com `while ((c = getchar()) != '\n' && c != EOF)` e o programa solicita a digitação correta sem travar ou pular campos.
 
-### Suporte Nativo a Caracteres Especiais (`ç` e Acentos)
-- O programa executa `system("chcp 65001 > nul")` no início da execução, ativando a codificação UTF-8 no terminal Windows e garantindo que palavras como `Preço: R$`, `Código:`, `Opção:` e `Exclusão:` apareçam perfeitas.
+### Suporte Multiplataforma (Windows e Linux / Online GDB)
+- O programa utiliza diretivas de compilação `#ifdef _WIN32` para alternar perfeitamente entre os comandos de limpeza de tela (`cls` no Windows e `clear` no Linux/Online GDB).
+- No Windows, executa `system("chcp 65001 > nul")` para ativar UTF-8 nativo no terminal. No Linux / Online GDB, o terminal já é UTF-8 por padrão e não executa chamadas externas incompatíveis.
 
 ---
 
 ## 🚀 Como Compilar e Executar
 
 ### Pré-requisitos
-- Compilador GCC instalado.
+- Compilador GCC instalado (ou navegador com [Online GDB](https://www.onlinegdb.com/)).
 
-### Compilação
+### Compilação (Windows / Linux)
 ```bash
 gcc -Wall -Wextra -pedantic sistema_cadastro.c -o sistema_cadastro.exe
 ```
+Ou a versão sem comentários:
+```bash
+gcc -Wall -Wextra -pedantic sistema_cadastro_sem_comentarios.c -o sistema_cadastro_sem_comentarios.exe
+```
 
-### Execução
+### Execução no Windows
 ```bash
 .\sistema_cadastro.exe
+```
+
+### Execução no Linux / Online GDB
+```bash
+./sistema_cadastro
 ```
 
 ---
@@ -124,9 +134,10 @@ gcc -Wall -Wextra -pedantic sistema_cadastro.c -o sistema_cadastro.exe
 
 ```
 AT1 - Projeto - Mini Sistema de Cadastro/
-├── sistema_cadastro.c          # Código-fonte principal em C (100% documentado e limpo)
-├── sistema_cadastro.exe        # Executável compilado
-├── README.md                   # Documentação completa do projeto
+├── sistema_cadastro.c                  # Código-fonte principal em C (100% documentado e limpo)
+├── sistema_cadastro_sem_comentarios.c  # Versão sem comentários (pronta para entrega / Online GDB)
+├── sistema_cadastro.exe                # Executável compilado
+├── README.md                           # Documentação completa do projeto
 └── Referencia/
     ├── Guia_Didatico_AT1_Mini_Sistema_C.pdf   # Guia oficial da professora Hially
     └── Instruções.txt                        # Instruções e critérios de avaliação
