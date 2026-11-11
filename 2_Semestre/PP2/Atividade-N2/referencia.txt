@@ -1,0 +1,169 @@
+Avaliação N2 — Sistema de Petshop em Linguagem C
+
+Metodologia: Aprendizagem Baseada em Projetos (PBL)
+
+Conteúdos: repetição, switch, strings, vetores e funções
+
+Duração: 3 a 4 semanas     Pontuação: 0 a 4,5
+
+Entrega: em sala, no dia da avaliação, com o arquivo-fonte .c atualizado
+
+Atenção: o programa precisa compilar e rodar. Programa que não compila recebe nota zero.
+
+1. Objetivo
+
+Desenvolver, em C, um sistema de atendimento para petshop, usado pelo funcionário da loja. O sistema cadastra clientes e pets, registra serviços e produtos e emite um comprovante com tudo o que foi feito.
+
+2. Etapas
+
+Etapa 1 — Login do funcionário
+
+O funcionário informa usuário e senha, comparados com valores definidos no código (strcmp).
+Máximo de 3 tentativas. Depois disso, o programa encerra.
+Etapa 2 — Menus (repetição e switch)
+
+Menu principal e submenus, conforme o modelo ao lado.
+Cada menu repete com do-while até escolher Voltar ou Sair.
+Opção inválida: exibir mensagem e mostrar o menu de novo (default).
+Etapa 3 — Cadastros
+
+Cliente: nome e telefone.
+Pet: nome, espécie (cão ou gato), raça e porte (pequeno, médio, grande).
+O pet só pode ser cadastrado depois do cliente. Serviços só depois do pet.
+Etapa 4 — Serviços (funções)
+
+Banho: preço conforme o porte do pet cadastrado.
+Tosa: preço conforme o tipo (higiênica, completa, na tesoura).
+Veterinária: consulta, vacina e exame, cada um com seu valor.
+Cada serviço é uma função que recebe a opção e retorna o valor.
+Etapa 5 — Produtos (vetores)
+
+Categorias: Alimentos, Acessórios e Higiene.
+Nomes e preços em vetores, com pelo menos 3 produtos por categoria.
+Escolher o produto e a quantidade. O valor é somado ao total.
+Etapa 6 — Comprovante final
+
+Registrar em vetores cada item escolhido: descrição, quantidade e valor.
+Imprimir funcionário, cliente e pet.
+Listar todos os itens, um por linha, e o valor total do atendimento.
+MODELO DE MENUS
+
+Use como referência. O nome da loja é livre.
+
+Menu principal
+
+==============================
+
+     PETSHOP AMIGO FIEL
+
+==============================
+
+  1 - Cadastros
+
+  2 - Serviços
+
+  3 - Produtos
+
+  4 - Comprovante final
+
+  0 - Sair
+
+==============================
+
+Escolha uma opção: _
+
+1 - Cadastros
+
+--------- CADASTROS ----------
+
+  1 - Cadastrar cliente
+
+  2 - Cadastrar pet
+
+  0 - Voltar
+
+2 - Serviços
+
+---------- SERVIÇOS ----------
+
+  1 - Banho
+
+  2 - Tosa
+
+  3 - Veterinária
+
+  0 - Voltar
+
+3 - Produtos
+
+---------- PRODUTOS ----------
+
+  1 - Alimentos
+
+  2 - Acessórios
+
+  3 - Higiene
+
+  0 - Voltar
+
+Exemplo de categoria
+
+--------- ALIMENTOS ----------
+
+  1 - Ração cão 10kg  R$ 120,00
+
+  2 - Ração gato 3kg  R$  65,00
+
+  3 - Petisco         R$  15,00
+
+  0 - Voltar
+
+Produto: _   Quantidade: _    Valor: _
+
+4 - Comprovante final
+
+Lista tudo o que foi feito no atendimento e o total.
+
+3. Critérios de avaliação (0 a 4,5)
+
+Critério
+
+Pontuação
+
+Login do funcionário com limite de tentativas
+
+0,5
+
+Cadastro do cliente e do pet
+
+0,5
+
+Menus com repetição e switch
+
+0,5
+
+Banho e tosa usando funções
+
+0,5
+
+Serviços de veterinária
+
+0,5
+
+Produtos por categoria usando vetores
+
+1,0
+
+Comprovante final completo
+
+0,5
+
+Organização do código (funções, nomes claros, indentação)
+
+0,5
+
+Total
+
+4,5
+
+ 
