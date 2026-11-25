@@ -1,0 +1,55 @@
+Instruções
+Instruções
+
+1. Desenvolva um programa que permita cadastrar 10 alunos, utilizando uma struct Aluno com os campos matrícula, nome, nota1, nota2 e média.
+
+Requisitos:
+1. Cadastrar os 10 alunos.
+2. Calcular a média individual por meio de uma função.
+3. Exibir a situação de cada aluno: aprovado (média ≥ 6,0) ou reprovado.
+4. Identificar o aluno com a maior e a menor média.
+5. Calcular a média geral da turma.
+6. Informar quantos alunos ficaram acima da média geral.
+
+2. Uma papelaria precisa controlar seus produtos. Crie uma struct Produto com código, nome, preço e quantidade em estoque.
+
+O programa deverá cadastrar até 15 produtos e oferecer um menu com as opções de cadastrar, listar, repor estoque, registrar venda e consultar produto pelo código.
+
+Requisitos:
+1. Não permitir códigos duplicados.
+2. Impedir vendas superiores à quantidade disponível.
+3. Atualizar o estoque por meio de funções.
+4. Calcular o valor total dos produtos em estoque.
+5. Identificar o produto com maior valor total em estoque.
+
+3. Desenvolva um sistema para cadastrar até 8 funcionários, armazenando código, nome, cargo, salário-base e quantidade de horas extras.
+
+Requisitos:
+1. Calcular o valor da hora considerando 160 horas mensais.
+2. Calcular cada hora extra com acréscimo de 50%.
+3. Calcular o salário bruto.
+4. Aplicar um desconto fictício de 10% sobre o salário bruto.
+5. Exibir o salário líquido de cada funcionário.
+6. Identificar o maior salário líquido e o custo total da folha.
+
+4. Uma loja deseja controlar suas vendas. Crie as estruturas Produto e Venda, sendo que cada venda deverá armazenar os dados de um produto, a quantidade vendida e o valor total.
+
+Requisitos:
+1. Cadastrar até 10 produtos.
+2. Registrar até 20 vendas.
+3. Associar cada venda a um produto cadastrado.
+4. Atualizar o estoque após cada venda.
+5. Calcular o faturamento total.
+6. Identificar o produto que gerou o maior faturamento.
+
+5.  Desenvolva um programa que utilize as estruturas Data, Paciente e Consulta.
+
+A estrutura Consulta deverá conter os dados do paciente, a data da consulta e uma descrição do atendimento.
+
+Requisitos:
+1. Cadastrar até 15 pacientes.
+2. Registrar até 30 consultas.
+3. Pesquisar as consultas de um paciente pelo código.
+4. Listar consultas realizadas em determinada data.
+5. Contabilizar o número de consultas por paciente.
+6. Identificar o paciente com maior número de atendimentos.
